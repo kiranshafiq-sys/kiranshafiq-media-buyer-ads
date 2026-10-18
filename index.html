@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Kiran Shafiq | Native Advertising &amp; Media Buying</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04070D;--panel:#0A1220;--ink:#E8F1F6;--mute:#8497AB;--line:#1A2A40;--cy:#19E3FF;--am:#FFD84A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg);scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Sora",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{margin:0;line-height:1.04;letter-spacing:-.025em}
+h1{font-size:clamp(2.5rem,7.5vw,6rem);font-weight:800;max-width:13ch}
+h2{font-size:clamp(1.8rem,4.4vw,3.2rem);font-weight:800;max-width:18ch}
+h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+p{margin:0 0 1em;max-width:56ch}.mono{font-family:"IBM Plex Mono",monospace}.mute{color:var(--mute)}
+.w{max-width:1240px;margin:0 auto;padding:0 22px}
+section{padding:110px 0;position:relative}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cy);outline-offset:3px}
+/* letterbox open */
+.bar{position:fixed;left:0;right:0;height:50vh;background:#000;z-index:60;pointer-events:none;transition:transform 1.4s cubic-bezier(.7,0,.2,1) .5s}
+.bar.t{top:0}.bar.b{bottom:0}.go .bar.t{transform:translateY(-101%)}.go .bar.b{transform:translateY(101%)}
+/* nav */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;background:linear-gradient(#04070Dee,#04070D00)}
+.nav .w{display:flex;justify-content:space-between;align-items:center;height:60px}
+.nav b{font-weight:800}.nav nav{display:flex;gap:22px;font:500 .85rem "IBM Plex Mono",monospace}
+.nav nav a{text-decoration:none;color:var(--mute)}.nav nav a:hover{color:var(--cy)}
+@media(max-width:640px){.nav nav a:nth-child(n+4){display:none}}
+/* hero */
+.hero{padding-right:0;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden;isolation:isolate}
+.floor{position:absolute;left:-20%;right:-20%;bottom:0;height:55%;z-index:-2;perspective:500px;mask-image:linear-gradient(transparent,#000 70%)}
+.floor i{position:absolute;inset:-50% 0 0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 56px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/56px 100%;transform:rotateX(62deg);animation:fl 5s linear infinite}
+@keyframes fl{to{background-position:0 56px,0 0}}
+.spot{position:absolute;inset:0;z-index:-1;background:radial-gradient(500px circle at var(--x,70%) var(--y,30%),#19E3FF26,transparent 60%)}
+.chart{position:absolute;right:max(24px,3vw);top:50%;transform:translateY(-42%);width:min(860px,56vw);height:auto;overflow:visible;z-index:-1}@media(max-width:900px){.chart{left:5vw;right:5vw;top:auto;bottom:5%;transform:none;width:90vw;opacity:.55}}
+.chart path{fill:none;stroke:var(--cy);stroke-width:2.5;stroke-dasharray:1400;stroke-dashoffset:1400;filter:drop-shadow(0 0 8px var(--cy))}
+.go .chart path{animation:dr 3.2s cubic-bezier(.5,0,.2,1) 1.6s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.chart circle{fill:var(--am);opacity:0}.go .chart circle{animation:pop .5s ease 4.6s forwards}@keyframes pop{to{opacity:1}}
+.hero h1 .wd{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.hero h1 .wd span{display:inline-block;transform:translateY(110%)}
+.go .hero h1 .wd span{animation:up .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(1.3s + var(--i)*.09s)}
+@keyframes up{to{transform:none}}
+.hero .sub{font:400 1rem "IBM Plex Mono",monospace;color:var(--cy);margin:26px 0 8px;opacity:0}
+.hero .lead{font-size:1.15rem;color:var(--mute);opacity:0;margin-bottom:32px}
+.btns{opacity:0}.go .sub,.go .lead,.go .btns{animation:fade 1s ease forwards}.go .sub{animation-delay:2.1s}.go .lead{animation-delay:2.3s}.go .btns{animation-delay:2.5s}
+@keyframes fade{to{opacity:1}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:6px;font:500 .9rem "IBM Plex Mono",monospace;text-decoration:none;border:1px solid var(--line);background:#0A1220cc;color:var(--cy);cursor:pointer;margin:0 10px 12px 0;transition:.2s}
+.btn:hover{border-color:var(--cy);box-shadow:0 0 24px #19E3FF33}
+.btn.p{background:var(--cy);color:#04070D;border-color:var(--cy);font-weight:500}
+.btn svg{width:18px;height:18px;fill:currentColor}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:34px 22px;border-left:1px solid var(--line)}.stats div:first-child{border-left:0}
+.stats b{display:block;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--ink);line-height:1}
+.stats span{font:.8rem "IBM Plex Mono",monospace;color:var(--mute)}
+/* deliver */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.grid>div{background:var(--bg);padding:30px 28px;transition:background .3s}.grid>div:hover{background:var(--panel)}
+.grid h3{margin-bottom:8px;color:var(--ink)}.grid p{color:var(--mute);margin:0;font-size:.95rem}
+/* loop */
+.loop{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;margin-top:44px}
+.loop span{font-weight:800;font-size:clamp(1.5rem,4vw,2.6rem);padding:0 4px}
+.loop em{flex:1;min-width:30px;height:2px;background:linear-gradient(90deg,var(--cy),transparent);transform-origin:left;transform:scaleX(0)}
+.loop.on em{animation:ln 1s ease forwards;animation-delay:calc(var(--i)*.35s)}@keyframes ln{to{transform:none}}
+/* proof */
+.shot{margin:44px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;transform:perspective(1400px) rotateX(var(--r,10deg)) scale(var(--s,.92));transform-origin:50% 100%;box-shadow:0 40px 120px #19E3FF1a}
+.shot .sc{overflow-x:auto}.shot img{display:block;width:100%;min-width:720px;height:auto}
+figcaption{padding:14px 18px;font-size:.85rem;color:var(--mute);border-top:1px solid var(--line)}figcaption b{color:var(--ink)}
+mark{background:var(--am);color:#04070D;padding:1px 6px;font-weight:700}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:22px}
+.gal figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.gal img{display:block;width:100%;height:240px;object-fit:contain;background:#fff}
+/* experience */
+.xp{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+@media(max-width:800px){.xp{grid-template-columns:1fr;gap:32px}section{padding:76px 0}}
+.xp .doc{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;max-height:420px;position:relative;cursor:zoom-in;padding:0;width:100%}
+.xp .doc img{display:block;width:100%}.xp .doc:after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,var(--bg))}
+.role{border-left:2px solid var(--cy);padding-left:18px;margin:26px 0}.role b{font-size:1.2rem;display:block}.role span{font:.85rem "IBM Plex Mono",monospace;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 30px}.chips span{padding:7px 14px;border:1px solid var(--line);border-radius:6px;font:.85rem "IBM Plex Mono",monospace;color:var(--mute)}
+/* modal */
+dialog{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;padding:0;width:min(960px,94vw);max-height:92vh;overflow:auto}
+dialog::backdrop{background:#000d;backdrop-filter:blur(6px)}
+dialog .hd{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2;gap:12px;flex-wrap:wrap}
+dialog .hd button.x{margin:0}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs .btn{margin:0;padding:9px 16px}.tabs .btn[aria-selected=true]{background:var(--cy);color:#04070D}
+dialog img,dialog video{display:block;width:100%;height:auto;background:#000}
+.pn[hidden]{display:none}
+.flat{transform:none;margin-top:28px;box-shadow:none}
+.kpi{display:flex;flex-wrap:wrap;gap:8px 36px;padding:16px 18px;border-top:1px solid var(--line);font:.85rem "IBM Plex Mono",monospace;color:var(--mute)}.kpi b{color:var(--cy);font-size:1.15rem;margin-right:6px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}.skills span{padding:8px 16px;border:1px solid var(--cy);border-radius:6px;font:.85rem "IBM Plex Mono",monospace;color:var(--cy)}
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:44px 0 28px}
+.qs blockquote{margin:0;background:var(--bg);padding:28px}.qs p{font-size:1.02rem;margin:0 0 18px}
+.qs cite{display:block;font-style:normal;font-weight:700}.qs cite span{display:block;font:.78rem "IBM Plex Mono",monospace;color:var(--mute);font-weight:400}
+/* contact */
+.end{text-align:left;border-top:1px solid var(--line)}
+.end h2{max-width:16ch;margin-bottom:28px}
+footer{padding:30px 0 60px;color:var(--mute);font:.85rem "IBM Plex Mono",monospace;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}html{scroll-behavior:auto}.bar{display:none}.floor i{animation:none}}
+</style>
+</head>
+<body>
+<div class="bar t"></div><div class="bar b"></div>
+<header class="nav"><div class="w"><b>Kiran Shafiq</b><nav><a href="#deliver">Deliver</a><a href="#proof">Proof</a><a href="#feedback">Feedback</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav></div></header>
+
+<main>
+<section class="hero" id="top">
+<div class="floor"><i></i></div><div class="spot"></div>
+<svg class="chart" viewBox="0 0 800 300" aria-hidden="true"><path d="M10 270 L100 250 L180 258 L270 200 L350 215 L440 140 L530 160 L620 80 L710 40 L780 18"/><circle cx="780" cy="18" r="8"/></svg>
+<div class="w">
+<h1 id="h1">Make every ad dollar work harder.</h1>
+<p class="sub">native advertising · media buying · optimization</p>
+<p class="lead">I find what to keep, what to stop and where the next dollar should go.</p>
+<div class="btns">
+<button class="btn p" data-open="vid"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch my intro</button>
+<a class="btn" href="https://www.linkedin.com/in/kiran-shafiq-bb0618162" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM10 9.5h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.4 2.600 4.400 6V21h-4v-5c0-1.200 0-2.800-1.700-2.800S14 14.500 14 15.900V21h-4z"/></svg>LinkedIn</a>
+<button class="btn" data-open="exp"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6zM14 3.500V8h4.500z"/></svg>Experience letter</button>
+</div></div>
+</section>
+
+<div class="stats" id="stats"><div><b data-n="4.5" data-d="1">0</b><span>years at Creative Crew</span></div><div><b data-n="316">0</b><span>campaigns in one view</span></div><div><b data-n="354677" data-c="1">0</b><span>clicks tracked</span></div><div><b data-n="3204" data-p="$">0</b><span>profit in 3 days</span></div></div>
+
+<section id="deliver"><div class="w">
+<h2>What you get from me.</h2>
+<div class="grid">
+<div><h3>Clear budget calls</h3><p>Which campaigns keep spending, which stop, and why.</p></div>
+<div><h3>Creatives that earn clicks</h3><p>Images, headlines and angles researched and tested, not guessed.</p></div>
+<div><h3>Cleaner traffic</h3><p>CPC judged by what clicks produce after the visit.</p></div>
+<div><h3>Careful scaling</h3><p>Winners get more room while the economics hold.</p></div>
+<div><h3>Tracking you can trust</h3><p>UTMs, pixels and tags set up so every result is traceable.</p></div>
+<div><h3>Reports with answers</h3><p>What happened, why, and what to test next.</p></div>
+<div class="skills"><span>Creative research</span><span>Campaign launch</span><span>Optimization</span><span>Scaling</span><span>Tracking &amp; analytics</span><span>Team leadership</span><span>Quality assurance</span><span>Reporting</span></div>
+</div></section>
+
+<section style="padding-top:20px"><div class="w">
+<h2>Test. Read. Adjust. Repeat.</h2>
+<div class="loop" id="loop"><span>Test</span><em style="--i:0"></em><span>Read</span><em style="--i:1"></em><span>Adjust</span><em style="--i:2"></em><span>Scale</span></div>
+</div></section>
+
+<section id="proof"><div class="w">
+<h2>Proof from the desk.</h2>
+<figure class="shot" id="shot"><div class="sc"><img src="data:BASE64_REMOVED" alt="Tracker view: 316 campaigns, 354,677 clicks, $13,806 revenue, $3,204 profit"></div><figcaption><b>Live tracker, 28 to 31 Aug 2025.</b> 316 campaigns, $13,806 revenue, <mark>$3,204 profit</mark>.</figcaption></figure>
+<figure class="shot flat"><div class="sc"><img src="data:BASE64_REMOVED" alt="Chattertime Media dashboard: spend by country, Jan to Jun 2026"></div><div class="kpi"><span><b>$28.3K</b>spend</span><span><b>1.66M</b>clicks</span><span><b>101K</b>conversions</span><span><b>$0.28</b>avg CPA</span></div><figcaption><b>Scaling across countries, 1 Jan to 25 Jun 2026.</b> Spend split by country so budget follows the markets that convert.</figcaption></figure>
+<div class="gal">
+<figure><img src="data:BASE64_REMOVED" alt="Outbrain ad research"><figcaption><b>Creative research, Outbrain.</b> 458.5K impressions.</figcaption></figure>
+<figure><img src="data:BASE64_REMOVED" alt="MGID ad research"><figcaption><b>Creative research, MGID.</b> 354.4K impressions.</figcaption></figure>
+<figure><img src="data:BASE64_REMOVED" alt="Google DV360 video ad research"><figcaption><b>Creative research, DV360.</b> 509.5K impressions.</figcaption></figure>
+<figure><img src="data:BASE64_REMOVED" alt="Meta carousel ad setup"><figcaption><b>Launch, Meta Ads.</b> Carousel build.</figcaption></figure>
+<figure><img src="data:BASE64_REMOVED" alt="Facebook Blueprint certificate"><figcaption><b>Facebook Blueprint.</b> Facebook for SMBs, 2018.</figcaption></figure>
+</div>
+<div class="chips" style="margin-top:40px"><span>Taboola</span><span>Outbrain</span><span>MGID</span><span>Zemanta</span><span>MediaGo</span><span>Baidu</span><span>Google Ads</span><span>Meta Ads</span><span>Pinterest</span><span>GA</span><span>GTM</span><span>Search Console</span><span>Meta Pixel</span><span>UTM</span></div>
+</div></section>
+
+<section id="feedback"><div class="w">
+<h2>What analysts and managers say.</h2>
+<div class="qs">
+<blockquote><p>“Very efficient, proactive, and reliable… ability to take over any site, improve performance.”</p><cite>Victoria Brion<span>CRO Manager</span></cite></blockquote>
+<blockquote><p>“Exceptionally talented, dedicated, and resourceful professional.”</p><cite>Marcos Hodara<span>Account Executive &amp; Sales</span></cite></blockquote>
+<blockquote><p>“Quickly adapt to dynamic environments… consistently deliver high-quality results on time.”</p><cite>Jenny Roditi<span>Affiliate Marketing Manager</span></cite></blockquote>
+<blockquote><p>“Successfully managed profitable content arbitrage campaigns.”</p><cite>David Benardete<span>Senior Ad Operations Manager</span></cite></blockquote>
+</div>
+<button class="btn p" data-open="exp" data-tab="1">See the original screenshots</button>
+</div></section>
+
+<section id="experience"><div class="w"><div class="xp">
+<div><h2>4.5 years. One team. Managed end to end.</h2>
+<div class="role"><b>Advertising Analyst, Creative Crew</b><span>Sargodha · Apr 2022 to Sep 2026</span></div>
+<p class="mute">Campaign strategy, daily team operations, reporting frameworks and QA, with company-wide initiatives on top.</p>
+<button class="btn p" data-open="exp">Read the letter</button></div>
+<button class="doc" data-open="exp" aria-label="Open experience letter"><img src="data:BASE64_REMOVED" alt="Experience letter from Creative Crew"></button>
+</div></div></section>
+
+<section class="end" id="contact"><div class="w">
+<h2>Let's look at your campaign first.</h2>
+<p class="mute">Rising CPC, weak CTR, tired creatives or no idea what to test next? Start there.</p>
+<a class="btn p" href="https://www.linkedin.com/in/kiran-shafiq-bb0618162" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM10 9.5h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.4 2.600 4.400 6V21h-4v-5c0-1.200 0-2.800-1.700-2.800S14 14.500 14 15.900V21h-4z"/></svg>Message me on LinkedIn</a>
+<button class="btn" data-open="vid">Watch my intro</button>
+</div></section>
+</main>
+<footer><div class="w">Kiran Shafiq · Native Advertising · Performance Marketing · Media Buying</div></footer>
+
+<dialog id="vid"><div class="hd"><b>Intro video</b><button class="btn x" data-close>Close</button></div><video controls playsinline preload="none" poster="data:BASE64_REMOVED"><source src="data:BASE64_REMOVED" type="video/mp4"></video></dialog>
+
+<dialog id="exp"><div class="hd"><div class="tabs" role="tablist"><button class="btn" role="tab" aria-selected="true" data-tab="0">Experience letter</button><button class="btn" role="tab" aria-selected="false" data-tab="1">Analyst feedback</button><button class="btn" role="tab" aria-selected="false" data-tab="2">Certificate</button></div><button class="btn x" data-close>Close</button></div>
+<div class="pn"><img src="data:BASE64_REMOVED" alt="Experience letter, Creative Crew, April 2022 to September 2026"></div>
+<div class="pn" hidden><img src="data:BASE64_REMOVED" alt="Email from Victoria Brion introducing Kiran to Marcos"><img src="data:BASE64_REMOVED" alt="LinkedIn recommendations from Marcos Hodara and Victoria Brion"><img src="data:BASE64_REMOVED" alt="LinkedIn recommendations from Jenny Roditi and David Benardete"></div>
+<div class="pn" hidden><img src="data:BASE64_REMOVED" alt="Facebook Blueprint certificate"></div></dialog>
+
+<script>
+(function(){
+var h=document.getElementById('h1'),i=0;
+h.innerHTML=h.textContent.split(' ').map(function(w){return '<span class="wd"><span style="--i:'+(i++)+'">'+w+'</span></span> '}).join('');
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('go')})});
+var hero=document.querySelector('.hero'),sp=hero.querySelector('.spot');
+hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();sp.style.setProperty('--x',(e.clientX-r.left)+'px');sp.style.setProperty('--y',(e.clientY-r.top)+'px')});
+function cnt(el){var n=+el.dataset.n,d=+el.dataset.d||0,p=el.dataset.p||'',t0=performance.now();
+(function f(t){var k=Math.min(1,(t-t0)/1800),v=n*(1-Math.pow(1-k,3));
+el.textContent=p+(el.dataset.c?Math.round(v).toLocaleString('en-US'):v.toFixed(d).replace(/\B(?=(\d{3})+(?!\d))/g,','));if(k<1)requestAnimationFrame(f)})(t0)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+if(e.target.id==='stats')e.target.querySelectorAll('b').forEach(cnt);
+if(e.target.id==='loop')e.target.classList.add('on');io.unobserve(e.target)})},{threshold:.4});
+io.observe(document.getElementById('stats'));io.observe(document.getElementById('loop'));
+var shot=document.getElementById('shot');
+function sc(){var r=shot.getBoundingClientRect(),k=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight*.8)));shot.style.setProperty('--r',(10*(1-k))+'deg');shot.style.setProperty('--s',(.92+.08*k))}
+addEventListener('scroll',sc,{passive:true});sc();
+document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){document.getElementById(b.dataset.open).showModal();if(b.dataset.tab)document.querySelector('[data-tab="'+b.dataset.tab+'"]').click()})});
+document.querySelectorAll('dialog').forEach(function(d){
+d.addEventListener('click',function(e){if(e.target===d||e.target.hasAttribute('data-close'))d.close()});
+d.addEventListener('close',function(){var v=d.querySelector('video');if(v)v.pause()})});
+var tb=document.querySelectorAll('[data-tab]'),pn=document.querySelectorAll('#exp .pn');
+tb.forEach(function(t,j){t.addEventListener('click',function(){tb.forEach(function(x,k){x.setAttribute('aria-selected',j===k);pn[k].hidden=j!==k})})});
+})();
+</script>
+</body>
+</html>
